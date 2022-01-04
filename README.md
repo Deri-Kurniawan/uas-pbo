@@ -1,4 +1,5 @@
 # KALKULATOR DEPOSITO - PROJECT UAS PBO
+Aplikasi penghitung bunga deposito
 build by framework [deri-kurniawan/mini-framework](https://github.com/deri-kurniawan/mini-framework)
 > ## Anggota / Contributors :
 >> 1. [Bangga Angkasa](https://github.com/BanggaA) <br>
