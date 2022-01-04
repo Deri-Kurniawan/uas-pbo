@@ -46,5 +46,6 @@ class Deposito extends BaseController
 
   public function about()
   {
+    return redirectOut('https://github.com/Deri-Kurniawan/uas-pbo');
   }
 }
