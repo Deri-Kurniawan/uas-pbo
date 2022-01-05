@@ -1,15 +1,15 @@
-<?= templateEngine('layouts.components.header', $title); ?>
-<?= templateEngine('layouts.components.navbar'); ?>
+<?= addComponent('layouts.components.header', $title); ?>
+<?= addComponent('layouts.components.navbar'); ?>
 
 <main>
   <div class="container">
     <div class="col-8 offset-2">
       <h1 class="text-center">Kalkulator Deposito</h1>
-      <?php if(isset($_GET['errorMessage'])) : ?>
+      <?php if (isset($_GET['errorMessage'])) : ?>
       <div class="alert alert-danger text-center"><?= $_GET['errorMessage']; ?></div>
       <?php endif ?>
 
-      <?php if(isset($_GET['result'])) : ?>
+      <?php if (isset($_GET['result'])) : ?>
       <div class="my-4 text-center">
         Rp<?= number_format($_GET['amountMoney'], 2) ?> ×
         <?= $_GET['interestRate']; ?>% ×
@@ -57,9 +57,9 @@
           <th>Jangka Waktu</th>
           <th>Keuntungan</th>
         </tr>
-        <?php if(is_array($historyCalculation) && count($historyCalculation) > 0) : ?>
+        <?php if (is_array($historyCalculation) && count($historyCalculation) > 0) : ?>
         <?php $no = 1 ?>
-        <?php foreach($historyCalculation as $hc) : ?>
+        <?php foreach ($historyCalculation as $hc) : ?>
         <tr>
           <td><?= $no++; ?></td>
           <td>Rp<?= number_format($hc['amount_money'], 2); ?></td>
@@ -80,4 +80,4 @@
   </div>
 </main>
 
-<?= templateEngine('layouts.components.footer'); ?>
+<?= addComponent('layouts.components.footer'); ?>

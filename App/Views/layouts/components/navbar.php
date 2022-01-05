@@ -11,7 +11,7 @@
           <a class="nav-link active" aria-current="page" href="<?= base_url(); ?>">Beranda</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="<?= base_url('about'); ?>">Tentang</a>
+          <a class="nav-link active" aria-current="page" href="<?= base_url('deposito/about'); ?>">Tentang</a>
         </li>
       </ul>
     </div>

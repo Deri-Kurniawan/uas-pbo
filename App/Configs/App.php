@@ -1,7 +1,6 @@
 <?php
-require_once 'System/constant.php';
-require_once 'System/helper.php';
-require_once 'System/init.php';
+require_once SYSTEMPATH . 'helper.php';
+require_once SYSTEMPATH . 'init.php';
 
 /**
  * App Ingiter and Configuration

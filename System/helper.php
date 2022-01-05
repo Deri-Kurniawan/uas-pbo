@@ -8,7 +8,7 @@ if (!function_exists('addComponent')) {
    * include view file for templating system
    * it can be used on based App/Controller/$1 and App/Views/$1 file
    */
-  function addComponent($view_file)
+  function addComponent($view_file, $title = 'Title not set!')
   {
     include APPPATH . 'Views/' . pathFilter($view_file) . '.php';
   }
@@ -32,7 +32,7 @@ if (!function_exists('base_url')) {
   function base_url(String $urlAfterBaseUrl = '')
   {
     $str = $GLOBALS['base_url'] . $urlAfterBaseUrl;
-    return pathFilter($str);
+    return $str;
   }
 }
 
@@ -59,13 +59,6 @@ if (!function_exists('included')) {
   }
 }
 
-if (!function_exists('templateEngine')) {
-  function templateEngine($file, $title = 'Title not set!')
-  {
-    include APPPATH . 'Views/' . pathFilter($file) . '.php';
-  }
-}
-
 if (!function_exists('redirect')) {
   /**
    * Redirect to $url on you application based on your BaseUrl Config
@@ -82,7 +75,7 @@ if (!function_exists('redirectOut')) {
    */
   function redirectOut($url)
   {
-    return header('location:' . pathFilter($url));
+    return header('location:' . $url);
   }
 }
 
