@@ -5,7 +5,7 @@ require_once SYSTEMPATH . 'Database.php';
 
 class BaseController
 {
-  public $request;
+  protected $request;
 
   /**
    * use this parent::__construct(); to you controller __construct();
