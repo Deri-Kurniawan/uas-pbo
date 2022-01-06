@@ -36,6 +36,18 @@ if (!function_exists('base_url')) {
   }
 }
 
+if (!function_exists('public_url')) {
+  /**
+   * Get your Public path for your assets
+   * @return String
+   */
+  function public_path(String $urlAfterBaseUrl = '')
+  {
+    $str = $GLOBALS['base_url'] . PUBLICPATH . $urlAfterBaseUrl;
+    return $str;
+  }
+}
+
 if (!function_exists('included')) {
 
   /**
