@@ -35,4 +35,15 @@ class Database
   {
     return $this->query("SELECT * FROM $table LIMIT $limit, $offset")->fetch_assoc();
   }
+
+  public function makeArrayAssoc($data)
+  {
+    $temp = array();
+
+    while ($row = mysqli_fetch_assoc($data)) {
+      $temp[] = $row;
+    }
+
+    return $temp;
+  }
 }
