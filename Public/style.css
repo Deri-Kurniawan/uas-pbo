@@ -1,3 +1,7 @@
-#box-scroll {
+/* #box-scroll {
   overflow: scroll;
+} */
+
+[alt="www.000webhost.com"] {
+  display: none;
 }
