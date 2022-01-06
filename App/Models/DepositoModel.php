@@ -13,12 +13,14 @@ class DepositoModel extends Database
   public function getCalculationHistory()
   {
     $result = $this->connect()->query("SELECT * FROM `{$this->table}`");
-    $arrayAssoc = array();
 
-    while ($row = mysqli_fetch_assoc($result)) {
-      $arrayAssoc[] = $row;
-    }
+    $arrayAssoc = $this->makeArrayAssoc($result);
 
     return $arrayAssoc;
+  }
+
+  public function clearHistory()
+  {
+    return $this->connect()->query("DELETE FROM {$this->table}");
   }
 }
