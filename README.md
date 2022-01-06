@@ -7,6 +7,6 @@ build by framework [deri-kurniawan/mini-framework](https://github.com/deri-kurni
 >> 2. [Deri Kurniawan](https://github.com/Deri-Kurniawan) <br>
 >>    <img src="https://avatars.githubusercontent.com/u/69128801?v=4" alt="drawing" width="8%"/>
 >> 3. [Fatih Assauqy](https://github.com/Fatih17) <br>
->>    <img src="https://avatars.githubusercontent.com/u/74699268?s=4"  alt="drawing" width="8%"/>
+>>    <img src="https://avatars.githubusercontent.com/u/74699268?v=4"  alt="drawing" width="8%"/>
 >> 4. [Reski Mulud](https://github.com/reski-mulud-muchamad) <br>
 >>    <img src="https://avatars.githubusercontent.com/u/63949402?v=4" alt="drawing" width="8%"/>
