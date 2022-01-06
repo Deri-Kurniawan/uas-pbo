@@ -37,7 +37,7 @@
             value="<?= isset($_GET['amv']) ? $_GET['amv'] : ''; ?>" placeholder="Masukan angka" required>
         </div>
         <div class="row">
-          <div class="col-12 col-sm-6">
+          <div class="col-12 mt-2 col-sm-6">
             <label for="interest_rate">Suku Bunga</label>
             <div class="input-group">
               <input type="interest_rate" name="interest_rate" id="interest_rate" class="form-control"
