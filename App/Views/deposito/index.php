@@ -4,7 +4,7 @@
 <main>
   <div class="container">
     <div class="col-12 col-md-8 offset-md-2">
-      <h1 class="text-center">Kalkulator Deposito</h1>
+      <h2 class="text-center my-1">Kalkulator Deposito</h2>
 
       <?php if (isset($_GET['successMessage'])) : ?>
       <div class="alert alert-success alert-dismissible fade show text-center">
@@ -37,7 +37,7 @@
             value="<?= isset($_GET['amv']) ? $_GET['amv'] : ''; ?>" placeholder="Masukan angka" required>
         </div>
         <div class="row">
-          <div class="col-12 mt-2 col-sm-6">
+          <div class="col-12 col-sm-6">
             <label for="interest_rate">Suku Bunga</label>
             <div class="input-group">
               <input type="interest_rate" name="interest_rate" id="interest_rate" class="form-control"
@@ -61,13 +61,13 @@
 
       <hr>
 
-      <h2 class="text-center my-4">Sejarah Kalkulasi</h2>
+      <h2 class="text-center my-2">Sejarah Kalkulasi</h2>
       <?php if (is_array($historyCalculation) && count($historyCalculation) > 0) : ?>
       <a class="btn btn-outline-danger mb-3" href="<?= base_url(); ?>Deposito/clearHistory"
         onclick="return confirm('Data tidak akan pernah dapat dikembalikan.\nyakin ingin membersihkan?')">Bersihkan
         Sejarah</a>
       <?php endif ?>
-      <div class="col-12" id="box-scroll">
+      <div class="col-12 overflow-scroll">
         <table class="table table-hover table-bordered">
           <tr class="table-primary">
             <th>No.</th>
@@ -77,10 +77,10 @@
             <th>Keuntungan</th>
           </tr>
           <?php if (is_array($historyCalculation) && count($historyCalculation) > 0) : ?>
-          <?php $no = 1 ?>
+          <?php $no = count($historyCalculation) ?>
           <?php foreach ($historyCalculation as $hc) : ?>
           <tr>
-            <td><?= $no++; ?></td>
+            <td><?= $no--; ?></td>
             <td>Rp<?= number_format($hc['amount_money'], 2); ?></td>
             <td><?= $hc['interest_rate']; ?>%</td>
             <td><?= $hc['time_span']; ?> Tahun</td>
