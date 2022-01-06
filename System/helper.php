@@ -41,9 +41,9 @@ if (!function_exists('public_url')) {
    * Get your Public path for your assets
    * @return String
    */
-  function public_path(String $urlAfterBaseUrl = '')
+  function public_path(String $urlAfterPublicUrl = '')
   {
-    $str = $GLOBALS['base_url'] . PUBLICPATH . $urlAfterBaseUrl;
+    $str = $GLOBALS['base_url'] . PUBLICPATH . $urlAfterPublicUrl;
     return $str;
   }
 }
