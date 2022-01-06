@@ -33,11 +33,17 @@ class Deposito extends BaseController
 
       $this->DepositoModel->saveCalculationHistory($amountMoney, $interestRate, $timeSpan);
 
-      return redirect("deposito/?amountMoney=$amountMoney&interestRate=$interestRate&timeSpan=$timeSpan&result=$result");
+      return redirect("Deposito/?amountMoney=$amountMoney&interestRate=$interestRate&timeSpan=$timeSpan&result=$result");
     } else {
       $errorMessage = 'Input harus berupa angka';
-      return redirect("deposito/?errorMessage=$errorMessage&amv=$amountMoney&irv=$interestRate&tsv=$timeSpan");
+      return redirect("Deposito/?errorMessage=$errorMessage&amv=$amountMoney&irv=$interestRate&tsv=$timeSpan");
     }
+  }
+
+  public function clearHistory()
+  {
+    $this->DepositoModel->clearHistory();
+    return redirect('Deposito/?successMessage=Sejarah kalkulasi berhasil dibersihkan!');
   }
 
   public function about()
