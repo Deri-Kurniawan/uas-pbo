@@ -31,7 +31,7 @@ class Route
      * Explode Url and Filter sanitize url special char
      */
     $url = explode('/', filter_var(
-      isset($_GET['url']) ? str_replace('//', '/', $_GET['url']) : [],
+      isset($_GET['miniframework-get-url']) ? str_replace('//', '/', $_GET['miniframework-get-url']) : [],
       FILTER_SANITIZE_URL
     ));
 
