@@ -24,26 +24,34 @@ class Deposito extends BaseController
 
   public function calculation()
   {
-    $amountMoney  = $this->request->getVar('amount_money');
-    $interestRate = $this->request->getVar('interest_rate');
-    $timeSpan     = $this->request->getVar('time_span');
+    $this->request->methodPOST(function () {
+      $amountMoney  = $this->request->getVar('amount_money');
+      $interestRate = $this->request->getVar('interest_rate');
+      $timeSpan     = $this->request->getVar('time_span');
 
-    if (is_numeric($amountMoney) && is_numeric($interestRate) && is_numeric($timeSpan)) {
-      $result = ($amountMoney * ($interestRate / 100) * $timeSpan);
+      if (is_numeric($amountMoney) && is_numeric($interestRate) && is_numeric($timeSpan)) {
+        $result = ($amountMoney * ($interestRate / 100) * $timeSpan);
 
-      $this->DepositoModel->saveCalculationHistory($amountMoney, $interestRate, $timeSpan);
+        $this->DepositoModel->saveCalculationHistory($amountMoney, $interestRate, $timeSpan);
 
-      return redirect("Deposito/?amountMoney=$amountMoney&interestRate=$interestRate&timeSpan=$timeSpan&result=$result");
-    } else {
-      $errorMessage = 'Input harus berupa angka';
-      return redirect("Deposito/?errorMessage=$errorMessage&amv=$amountMoney&irv=$interestRate&tsv=$timeSpan");
-    }
+        return redirect("?amountMoney=$amountMoney&interestRate=$interestRate&timeSpan=$timeSpan&result=$result");
+      } else {
+        $errorMessage = 'Input harus berupa angka';
+        return redirect("?errorMessage=$errorMessage&amv=$amountMoney&irv=$interestRate&tsv=$timeSpan");
+      }
+    }, function () {
+      return redirect('?errorMessage=Anda tidak punya izin untuk mengakses fungsi ini secara langsung!');
+    });
   }
 
   public function clearHistory()
   {
-    $this->DepositoModel->clearHistory();
-    return redirect('Deposito/?successMessage=Sejarah kalkulasi berhasil dibersihkan!');
+    $this->request->methodPOST(function () {
+      $this->DepositoModel->clearHistory();
+      return redirect('?successMessage=Sejarah kalkulasi berhasil dibersihkan!');
+    }, function () {
+      return redirect('?errorMessage=Anda tidak punya izin untuk mengakses fungsi ini secara langsung!');
+    });
   }
 
   public function about()
