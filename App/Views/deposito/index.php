@@ -77,10 +77,10 @@
             <th>Keuntungan</th>
           </tr>
           <?php if (is_array($historyCalculation) && count($historyCalculation) > 0) : ?>
-          <?php $no = count($historyCalculation) ?>
+          <?php $no = 1 ?>
           <?php foreach ($historyCalculation as $hc) : ?>
           <tr>
-            <td><?= $no--; ?></td>
+            <td><?= $no++; ?></td>
             <td>Rp<?= number_format($hc['amount_money'], 2); ?></td>
             <td><?= $hc['interest_rate']; ?>%</td>
             <td><?= $hc['time_span']; ?> Tahun</td>

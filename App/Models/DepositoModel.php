@@ -12,7 +12,7 @@ class DepositoModel extends Database
 
   public function getCalculationHistory()
   {
-    $result = $this->connect()->query("SELECT * FROM `{$this->table}` ORDER BY `id` DESC");
+    $result = $this->connect()->query("SELECT * FROM `{$this->table}` ORDER BY `id` ASC");
 
     $arrayAssoc = $this->makeArrayAssoc($result);
 
