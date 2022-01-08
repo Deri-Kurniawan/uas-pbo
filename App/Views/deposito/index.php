@@ -63,9 +63,11 @@
 
       <h2 class="text-center my-2">Sejarah Kalkulasi</h2>
       <?php if (is_array($historyCalculation) && count($historyCalculation) > 0) : ?>
-      <a class="btn btn-outline-danger mb-3" href="<?= base_url(); ?>Deposito/clearHistory"
-        onclick="return confirm('Data tidak akan pernah dapat dikembalikan.\nyakin ingin membersihkan?')">Bersihkan
-        Sejarah</a>
+      <form action="<?= base_url('Deposito/clearHistory'); ?>" method="POST">
+        <button type="submit" class="btn btn-outline-danger mb-3"
+          onclick="return confirm('Data tidak akan pernah dapat dikembalikan.\nyakin ingin membersihkan?')">Bersihkan
+          Sejarah</button>
+      </form>
       <?php endif ?>
       <div class="col-12 overflow-scroll">
         <table class="table table-hover table-bordered">
