@@ -17,7 +17,7 @@ class Deposito extends BaseController
     $historyCalculation = $this->DepositoModel->getCalculationHistory();
 
     return view('deposito.index', [
-      'title'              => 'Deposito Calculation',
+      'title'              => 'Depo Calculation',
       'historyCalculation' => $historyCalculation,
     ]);
   }

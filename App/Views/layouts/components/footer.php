@@ -1,6 +1,6 @@
 <footer>
   <div class="mt-4 text-center">
-    <p>&copy; Copyright DepoCalc <?= Date('Y'); ?></p>
+    <p>&copy; Copyright Depo Calculator <?= Date('Y'); ?></p>
   </div>
 </footer>
 
