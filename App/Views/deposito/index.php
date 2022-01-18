@@ -22,10 +22,10 @@
 
       <?php if (isset($_GET['result'])) : ?>
       <div class="alert alert-success alert-dismissible fade show text-center">
-        Rp<?= number_format($_GET['amountMoney'], 2) ?> ×
+        Rp<?= number_format($_GET['amountMoney'], 2, ',', '.') ?>,- ×
         <?= $_GET['interestRate']; ?>% ×
         <?= $_GET['timeSpan']; ?> Tahun = <span
-          class="text-decoration-underline">Rp<?= number_format($_GET['result'], 2); ?></span>
+          class="text-decoration-underline">Rp<?= number_format($_GET['result'], 2, ',', '.'); ?>,-</span>
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
       </div>
       <?php endif ?>
@@ -83,11 +83,11 @@
           <?php foreach ($historyCalculation as $hc) : ?>
           <tr>
             <td><?= $no++; ?></td>
-            <td>Rp<?= number_format($hc['amount_money'], 2); ?></td>
+            <td>Rp<?= number_format($hc['amount_money'], 2, ',', '.'); ?>,-</td>
             <td><?= $hc['interest_rate']; ?>%</td>
             <td><?= $hc['time_span']; ?> Tahun</td>
             <td>
-              Rp<?= number_format($hc['amount_money'] * ($hc['interest_rate'] / 100) * $hc['time_span'], 2); ?>
+              Rp<?= number_format($hc['amount_money'] * ($hc['interest_rate'] / 100) * $hc['time_span'], 2, ',', '.'); ?>,-
             </td>
           </tr>
           <?php endforeach ?>
